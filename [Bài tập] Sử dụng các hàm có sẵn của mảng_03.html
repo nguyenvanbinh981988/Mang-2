@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('Enter String')
+    let Chuoi = [str[0]]
+    for (let i = 0; i<str.length;i++) {
+        let character = str[i]
+        if (character == character.toLowerCase()) {
+            character = str[i].toUpperCase()
+            Chuoi.push(character)
+            } else if (character == character.toUpperCase()) {
+            character = str[i].toLowerCase()
+            Chuoi.push(character)
+        } else {
+            Chuoi.push(character)
+        }
+            }
+    document.write(Chuoi.join(''))
+</script>
+</body>
+</html>
