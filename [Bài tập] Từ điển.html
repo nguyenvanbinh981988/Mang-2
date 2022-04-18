@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <h1>Tu dien tieng anh </h1>
+    <p>Tieng Anh &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Tieng Viet </p>
+    <input id="TA" type="text"value="" >
+    <input id="TV" type="text"value="" >
+    <br>
+    <button id="a" type="button" onclick="thucThi()">dich</button>
+</form>
+<script>
+    let tiengAnh = [ 'school' , 'house' , 'car', 'cat' , 'dog']
+    let tiengViet = [ 'truong hoc' , 'nha' , 'xe hoi', 'meo' , 'cho']
+    function thucThi() {
+        let a = document.getElementById('TA').value
+        let  check = true
+        for (let i = 0; i < tiengAnh.length; i++) {
+            if (a == tiengAnh[i]) {
+                document.getElementById('TV').value = tiengViet[i]
+                check = false
+                break
+            }
+        }
+        if (check) {
+            alert('khong tim thay')
+        }
+    }
+
+</script>
+</body>
+</html>
