@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = []
+    let str2 = []
+    for (let i = 0 ;i < 10;i++) {
+        let a = parseInt(prompt('nhap gia tri cua mang a'))
+        str1.push(a)
+    }
+    for (let j = 0 ;j < 10;j++) {
+        let b = parseInt(prompt('nhap gia tri cua mang b'))
+        str2.push(b)
+    }
+    let str3 = str1.concat(str2)
+    document.write('Mang dau vao a :', str1 ,'<br>')
+    document.write('Mang dau vao b :', str2 ,'<br>')
+    document.write('Mang dau ra :', str3 )
+
+
+
+</script>
+</body>
+</html>

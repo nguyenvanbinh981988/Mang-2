@@ -7,13 +7,13 @@
 <body>
 <script>
     let str = prompt('Enter String')
-    let Chuoi = [str[0]]
+    let Chuoi = []
     for (let i = 0; i<str.length;i++) {
         let character = str[i]
-        if (character == character.toLowerCase()) {
+        if (character === character.toLowerCase()) {
             character = str[i].toUpperCase()
             Chuoi.push(character)
-            } else if (character == character.toUpperCase()) {
+            } else if (character === character.toUpperCase()) {
             character = str[i].toLowerCase()
             Chuoi.push(character)
         } else {

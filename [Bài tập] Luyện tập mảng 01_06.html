@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = []
+    for (let i = 0 ;i < 10;i++) {
+        let a = parseInt(prompt('nhap gia tri cua mang'))
+        str.push(a)
+    }
+        let V = parseInt(prompt('Nhap so V'))
+        let check = false
+    for (let j = 0 ; j < str.length;j++){
+        if (V === str[j] ) {
+        check = true
+            break
+    }
+    }
+    document.write('mang: ', str ,'<br>')
+        if (check) {
+            document.write(V,' is in the array ')
+        } else {
+            document.write(V,' is not in the array ')
+
+        }
+</script>
+</body>
+</html>

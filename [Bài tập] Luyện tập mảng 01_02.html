@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = []
+    for (let i = 0 ;i < 10;i++){
+        let a = parseInt(prompt('nhap gia tri cua mang'))
+        str.push(a)
+    }
+    let maxValue = str[0]
+        for (let j = 0; j <str.length ; j++) {
+            if (maxValue<=str[j]) {
+                maxValue = str[j]
+            }
+        }
+    document.write('mang: ', str ,'<br>')
+    document.write('So lon nhat la: ', maxValue)
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let V = parseInt(prompt('Nhap so V'))
+    let str = []
+    for (let i = 0 ;i < 10;i++) {
+        let a = parseInt(prompt('nhap gia tri cua mang'))
+        str.push(a)
+    }
+    document.write('Mang dau vao :', str ,'<br>')
+
+    for (let j = 0 ; j < str.length;j++){
+        if (V === str[j] ) {
+            for (let k =j;k<str.length;k++){
+             str[j] = str[j+1]
+                str[str.length-1] = 0
+            }
+
+        }
+    }
+    str.pop()
+        document.write('so nhap vao la:',V,'<br>')
+        document.write('Mang sau khi xoa la: ',str)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = []
+    let count = 0
+    for (let i = 0 ;i < 10;i++){
+        let a = parseInt(prompt('nhap gia tri cua mang'))
+        str.push(a)
+    }
+    for (let j = 0 ; j < str.length;j++){
+        if (str[j] > 10 )
+            count++
+    }
+    document.write('mang: ', str ,'<br>')
+    document.write('So luong cac so lon hon 10 la: ', count)
+</script>
+</body>
+</html>

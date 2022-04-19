@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = parseInt(prompt('Nhap so luong phan tu mang'))
+      let str = []
+    for (let i = 0 ; i< n ;i++){
+        let a = parseInt(prompt('Nhap phan tu mang'))
+        str.push(a)
+    }
+    let maxValue = str[0]
+    let sum = 0
+    let medium
+    for (let j = 0; j<str.length;j++) {
+        if (maxValue<=str[j]){
+            maxValue = str[j]
+        }
+        sum += str[j]
+        medium = sum/n
+    }
+    document.write('mang: ', str ,'<br>')
+    document.write('So lon nhat trong mang la: ',maxValue ,'<br>')
+    document.write('Gia tri trung binh cua cac phan tu la: ', medium)
+</script>
+</body>
+</html>

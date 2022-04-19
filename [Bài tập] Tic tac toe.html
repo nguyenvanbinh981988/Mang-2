@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caro Game Sinple</h1>
+<p id="Tictactoegame"> </p>
+<script>
+    let b = document.getElementById("Tictactoegame");
+    let board = []
+    let data =''
+    for(let i = 0;i<3 ; i++){
+        board[i] = ['.' , '.' , '.' ]
+    }
+    for(let i = 0;i<3 ; i++) {
+        data += '<br>'
+        for (let j = 0 ; j <3;j++){
+            data += board[i][j] + '&nbsp&nbsp;';
+        }
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    b.innerHTML = data
+
+    let  A=true
+    function nhapX() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 3; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 3; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        A=false
+
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+        b.innerHTML = "<hr/>" + data;
+    }
+
+
+    function nhapO() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "O";
+        for (let i = 0; i < 3; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 3; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        A=true
+
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+        b.innerHTML = "<hr/>" + data;
+    }
+
+
+    function changeValue(){
+        if (A) {
+             nhapX()
+        } else {
+            nhapO()
+        }
+    }
+
+
+    if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[1][1] == 'X' ) {
+        alert(' X win')
+    }
+    if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[1][1] == 'X') {
+        alert(' X win')
+    }
+    if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[1][1] == 'O') {
+        alert(' O win')
+    }
+    if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[1][1] == 'O') {
+        alert(' O win')
+    }
+
+
+    // dieu kien ket thuc game
+    for (let i=0; i< board.length;i++) {
+        for (let j=0; j<board.length;j++) {
+            if (board[i] === ['X' , 'X' , 'X' ]) {
+                alert(' X win')
+            }
+            if(board[j] === ['X' , 'X' , 'X' ]) {
+                alert(' X win')
+            }
+            if (bboard[i] === ['O' , 'O' , 'O' ]) {
+                alert(' O win')
+            }
+            if (board[j] === ['O' , 'O' , 'O' ]){
+                alert(' O win')
+            }
+        }
+    }
+</script>
+</body>
+</html>

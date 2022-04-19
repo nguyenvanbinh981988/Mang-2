@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = []
+    for (let i = 0 ;i < 10;i++) {
+        let a = parseInt(prompt('nhap gia tri cua mang'))
+        str.push(a)
+    }
+    document.write('Mang dau vao :', str ,'<br>')
+
+    str.sort(function (a,b){
+        return b-a
+    })
+    document.write('Mang dao nguoc :', str )
+
+</script>
+</body>
+</html>
