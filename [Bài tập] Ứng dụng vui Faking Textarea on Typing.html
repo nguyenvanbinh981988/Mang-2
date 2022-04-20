@@ -6,18 +6,18 @@
 </head>
 <body>
 <h1>Type anthing slowly</h1>
-<textarea id="tunhap" onkeydown="key()"></textarea>
+<textarea id="tunhap" oninput="key()"  ></textarea>
 <script>
     let a = 'Ban muon danh nhau khong'
     let str = a.toString()
     let mang = []
-    let i = -1;
+    let b = 0;
     function key() {
-        i++
-        mang.push(str[i])
-        }
-       alert(mang)
+        b++
+        mang.push(str[b-1])
+        document.getElementById('tunhap').value=mang.join('')
     }
+
 </script>
 </body>
 </html>
