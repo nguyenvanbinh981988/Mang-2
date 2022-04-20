@@ -7,6 +7,7 @@
 <body>
 <h1>Caro Game Sinple</h1>
 <p id="Tictactoegame"> </p>
+<input type='button' value='Change Value' onclick='changeValue()'>
 <script>
     let b = document.getElementById("Tictactoegame");
     let board = []
@@ -20,86 +21,99 @@
             data += board[i][j] + '&nbsp&nbsp;';
         }
     }
-    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
     b.innerHTML = data
 
     let  A=true
     function nhapX() {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
+        let positionX = prompt("nhap toa do X ben X: ");
+        let positionY = prompt("nhap toa do Y ben X: ");
         data = "";
-        board[positionX][positionY] = "x";
-        for (let i = 0; i < 3; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 3; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        if (board[positionX][positionY] === '.' ) {
+            board[positionX][positionY] = "X";
+            for (let i = 0; i < 3; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 3; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
             }
+            A=false
+        } else {
+           alert('Ban da nhap vao o da nhap')
+           nhapX();
         }
-        A=false
-
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
         b.innerHTML = "<hr/>" + data;
     }
 
 
     function nhapO() {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
+        let positionX = prompt("nhap toa do X ben O: ");
+        let positionY = prompt("nhap toa do Y ben O: ");
         data = "";
-        board[positionX][positionY] = "O";
-        for (let i = 0; i < 3; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 3; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        if (board[positionX][positionY] === '.' ) {
+            board[positionX][positionY] = "O";
+            for (let i = 0; i < 3; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 3; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
             }
+            A = true
+        } else {
+            alert('Ban da nhap vao o da nhap');
+            nhapO();
         }
-        A=true
-
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
         b.innerHTML = "<hr/>" + data;
     }
 
 
-    function changeValue(){
+    function changeValue() {
         if (A) {
-             nhapX()
+            nhapX()
         } else {
             nhapO()
         }
-    }
 
 
-    if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[1][1] == 'X' ) {
-        alert(' X win')
-    }
-    if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[1][1] == 'X') {
-        alert(' X win')
-    }
-    if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[1][1] == 'O') {
-        alert(' O win')
-    }
-    if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[1][1] == 'O') {
-        alert(' O win')
-    }
-
-
-    // dieu kien ket thuc game
-    for (let i=0; i< board.length;i++) {
-        for (let j=0; j<board.length;j++) {
-            if (board[i] === ['X' , 'X' , 'X' ]) {
-                alert(' X win')
-            }
-            if(board[j] === ['X' , 'X' , 'X' ]) {
-                alert(' X win')
-            }
-            if (bboard[i] === ['O' , 'O' , 'O' ]) {
-                alert(' O win')
-            }
-            if (board[j] === ['O' , 'O' , 'O' ]){
-                alert(' O win')
+        if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[1][1] === 'X') {
+            alert(' X win')
+        }
+        if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[1][1] === 'X') {
+            alert(' X win')
+        }
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j <3; j++) {
+                if (board[i][j] === board[i][j-1] && board[i][j] === board[i][j+1] && board[i][j] === 'X') {
+                    alert('X win')
+                }
             }
         }
+        for (let j = 0; j < 3; j++) {
+                if (board[0][j] === board[1][j] && board[0][j] === board[2][j] && board[0][j] === 'X') {
+                    alert('X win')
+            }
+        }
+
+
+        if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[1][1] === 'O') {
+            alert(' O win')
+        }
+        if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[1][1] === 'O') {
+            alert(' O win')
+        }
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j <3; j++) {
+                if (board[i][j] === board[i][j-1] && board[i][j] === board[i][j+1] && board[i][j] === 'O') {
+                    alert('O win')
+                }
+            }
+        }
+        for (let j = 0; j < 3; j++) {
+                if (board[0][j] === board[1][j] && board[0][j] === board[2][j] && board[0][j] === 'O') {
+                    alert('O win')
+                }
+            }
     }
+
 </script>
 </body>
 </html>
