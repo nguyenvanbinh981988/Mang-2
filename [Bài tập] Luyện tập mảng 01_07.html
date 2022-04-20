@@ -14,16 +14,19 @@
     }
     document.write('Mang dau vao :', str ,'<br>')
 
+    let count = 0
     for (let j = 0 ; j < str.length;j++){
         if (V === str[j] ) {
             for (let k =j;k<str.length;k++){
-             str[j] = str[j+1]
-                str[str.length-1] = 0
+             str[k] = str[k+1]
             }
-
+            str[str.length-1] = 0
+                count ++
         }
     }
-    str.pop()
+     for (let i = 0; i<count;i++){
+         str.pop()
+     }
         document.write('so nhap vao la:',V,'<br>')
         document.write('Mang sau khi xoa la: ',str)
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="Display"></div>
+<script>
+    let n = parseInt(prompt('nhap so hang'))
+    let m = parseInt(prompt('nhap so cot'))
+    let str= []
+    for (let i = 0;i<n;i++){
+        let hang = []
+        for (let j=0;j<m;j++){
+            let a = prompt('nhap gia tri phan tu')
+            hang.push(a)
+        }
+        str.push(hang)
+    }
+    let data ='[ <br> '
+    for (let i = 0;i<n;i++){
+        data += '['
+        for (let j=0;j<m;j++){
+            if(j===0) {
+                data += str[i][j]
+            }else {
+                data += ',' + str[i][j]
+            }
+        }
+        data += '], <br>'
+        }
+    data += ']'
+        document.getElementById('Display').innerHTML= data
+        document.write('Tong so ky tu trong mang:' ,n*m)
+
+</script>
+</body>
+</html>

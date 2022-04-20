@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Chuoi = prompt('Nhap chuoi')
+    let str = Chuoi.toString()
+    let mang = []
+    for (let i = 0; i < str.length;i++){
+     mang.push(str[i])
+    }
+    document.write('Chuoi nhap vao: ',Chuoi,'<br>')
+
+    let count = 0
+    for (let j = 0 ; j < mang.length;j++){
+        if (mang[j]=== ' ' ) {
+            for (let k =j;k<mang.length;k++){
+                mang[k] = mang[k+1]
+            }
+            mang[mang.length-1] = 0
+            count++
+        }
+    }
+    for (let i = 0; i<count;i++){
+        mang.pop()
+    }
+    document.write('Mang sau khi xoa la: ',mang.length)
+
+</script>
+</body>
+</html>

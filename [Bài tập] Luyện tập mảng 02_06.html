@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let A = prompt('Nhap chuoi ky tu')
+    let chuoi = A.toString()
+    let str = []
+    for (let i = 0 ; i<chuoi.length ;i++){
+        str.push(chuoi[i])
+    }
+    document.write('Mang nhap vao: ',str,'<br>')
+
+    for (let j = 0; j<str.length;j++){
+        if(str[j] === '-' ){
+            str[j] = '_'
+        }
+    }
+    document.write('Mang dau ra: ',str)
+</script>
+</body>
+</html>

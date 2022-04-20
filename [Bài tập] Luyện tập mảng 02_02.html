@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Nhap so luong phan tu mang'))
+    let str = []
+    for (let i = 0 ; i< n ;i++){
+        let a = prompt('Nhap phan tu mang')
+        str.push(a)
+    }
+    document.write('Mang nhap vao la: ',str,'<br>')
+    let str1 = str.reverse()
+    document.write('Cac chu dao nguoc in ra la: ', str1.join(''))
+
+</script>
+</body>
+</html>
